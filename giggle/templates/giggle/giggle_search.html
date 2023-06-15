@@ -1,0 +1,26 @@
+{% extends "./base.html" %} 
+
+{% block content %} 
+
+    <main>
+        <form class="input-group query-input" action="/" method="post">
+            {% csrf_token %} 
+            <input type="text" name="query" class="form-control" placeholder="Input topic" maxlength="50" />
+            <button class="btn btn-outline-secondary" type="submit">
+                <span class="material-icons mt-2"> search </span>
+            </button>
+        </form>
+        <div class="results">
+            {% if query %}
+                <div class="joke">
+                    <h3>{{ query }}</h3>
+                    <p>{{ response }}</p>
+                </div>
+            {% endif %}
+            <a href="{% url 'giggle_history' %}" class="history-link">
+                <small>See history</small>
+            </a>
+        </div>
+    </main>
+
+{% endblock %} 

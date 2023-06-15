@@ -1,0 +1,10 @@
+{% block logo %}
+{% load static %}
+
+<header>
+    <a href="{% url 'giggle_search' %}">
+        <img class="img-fluid" src="{% static 'giggle.png' %}" alt="Giggle logo" />
+    </a>
+</header>
+
+{% endblock %}
